@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: znick/docker-exim-relay/docker-exim-relay
+        username: znick
+        password: ${{ GITHUB_TOKEN }}
+        tag_names: true
+        registry: docker.pkg.github.com
