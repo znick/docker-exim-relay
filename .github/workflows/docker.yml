@@ -17,6 +17,6 @@ jobs:
       with:
         name: znick/docker-exim-relay/docker-exim-relay
         username: znick
-        password: ${{ GITHUB_TOKEN }}
+        password: ${{ secrets.GITHUB_TOKEN }}
         tag_names: true
         registry: docker.pkg.github.com
