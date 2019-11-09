@@ -15,8 +15,7 @@ jobs:
     - name: Publish to Registry
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: znick/docker-exim-relay/docker-exim-relay
-        username: znick
-        password: ${{ secrets.GITHUB_TOKEN }}
+        name: eximrelay/docker-exim-relay
+        username: ${{ secrets.DOCKER_HUB_USER }}
+        password: ${{ secrets.DOCKER_HUB_PASSWORD }}
         tag_names: true
-        registry: docker.pkg.github.com
