@@ -26,7 +26,7 @@ RUN apk --no-cache add exim=$VERSION libcap openssl \
 COPY ./entrypoint.sh /
 COPY ./exim.conf /etc/exim
 
-USER exim
+#USER exim
 VOLUME ["/dkim"]
 EXPOSE 25
 
